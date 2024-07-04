@@ -9,3 +9,8 @@ nvim/lazy-lock.json
 !*/ranger/
 !ranger/**
 !ranger/
+
+!*/lazygit/
+!lazygit/**
+!lazygit/
+lazygit/state.yml
