@@ -1,6 +1,11 @@
 *
-!*/nvim/
 !.gitignore
+
+!*/nvim/
 !nvim/**
 !nvim/
 nvim/lazy-lock.json
+
+!*/ranger/
+!ranger/**
+!ranger/
