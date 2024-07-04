@@ -27,3 +27,7 @@ btop/btop.log
 !*/alacritty/
 !alacritty/**
 !alacritty/
+
+!*/rofi/
+!rofi/**
+!rofi/
