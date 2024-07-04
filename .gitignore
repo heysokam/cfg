@@ -23,3 +23,7 @@ btop/btop.log
 !*/xonsh/
 !xonsh/**
 !xonsh/
+
+!*/alacritty/
+!alacritty/**
+!alacritty/
