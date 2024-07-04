@@ -10,6 +10,6 @@ keybinding:
   files:
     ignoreFile    : 'I'
 os:
-  edit            : 'nvim {{filename}}'
+  edit            : 'lvim {{filename}}'
 gui:
   nerdFontsVersion: "3"
