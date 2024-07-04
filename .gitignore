@@ -19,3 +19,7 @@ lazygit/state.yml
 !btop/**
 !btop/
 btop/btop.log
+
+!*/xonsh/
+!xonsh/**
+!xonsh/

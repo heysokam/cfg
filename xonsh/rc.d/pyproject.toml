@@ -1,0 +1,12 @@
+[tool.pyright]
+include = ["*.xsh"]
+defineConstant = { DEBUG = true }
+
+reportMissingImports = true
+
+pythonVersion = "3.10"
+pythonPlatform = "Linux"
+
+executionEnvironments = [
+  { root = "." }
+]
