@@ -11,27 +11,6 @@ return {
   --  This is equivalent to:
   --    require('Comment').setup({})
 
-  -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim", opts = {} },
-
-  -- Here is a more advanced example where we pass configuration
-  -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
-  --    require('gitsigns').setup({ ... })
-  --
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    "lewis6991/gitsigns.nvim",
-    opts = {
-      signs = {
-        change       = { text = "│" },
-        add          = { text = "┃" },
-        delete       = { text = "┗" },
-        topdelete    = { text = "‾" },
-        changedelete = { text = "~" },
-      },
-    },
-  },
-
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -143,6 +122,7 @@ return {
       -- Enable Telescope extensions if they are installed
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension, "ui-select")
+      pcall(require("telescope").load_extension, "lazygit")
 
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
@@ -551,19 +531,6 @@ return {
     end,
   },
 
-  -- Highlight todo, notes, etc in comments
-  {
-    "folke/todo-comments.nvim",
-    event = "VimEnter",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      signs = false,
-      TODO = { icon = " ", color = "info", alt = { "@todo" } },
-      NOTE = { icon = " ", color = "hint", alt = { "INFO", "@note" } },
-      WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "@warning", "@warn" } },
-    },
-  },
-
   { -- Collection of various small independent plugins/modules
     "echasnovski/mini.nvim",
     config = function()
@@ -644,16 +611,6 @@ return {
   -- place them in the correct locations.
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
