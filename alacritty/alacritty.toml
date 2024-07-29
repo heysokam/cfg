@@ -19,8 +19,9 @@ white = "0xbbbbbb"
 yellow = "0xf1fa8c"
 
 [colors.primary]
-background = "0x282a36"
-foreground = "0xf8f8f2"
+# background = "0x282a36"
+background = "0x111111"
+foreground = "0xf8f8f8"
 
 [font]
 size = 10.0
@@ -49,4 +50,4 @@ program = "xonsh"
 
 [window]
 dynamic_title = true
-opacity = 0.85
+opacity = 0.65
