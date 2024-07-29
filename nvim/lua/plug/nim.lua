@@ -1,0 +1,4 @@
+return {
+  { "heysokam/nim.vim" },
+}
+
