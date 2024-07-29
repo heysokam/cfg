@@ -3,6 +3,6 @@ return {
   config = function()
     require("nvim_comment").setup({
     })
-    vim.keymap.set({'n', 'v'}, '<Leader>/', ':silent CommentToggle<cr>')
+    vim.keymap.set({'n', 'v'}, '<Leader>/', ':CommentToggle<cr>')
   end,
 }
