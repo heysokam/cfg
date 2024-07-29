@@ -51,3 +51,4 @@ def GitNdk():
       hasTodo = GitReport( filename )
       if not gitPending and hasTodo: gitPending = True
   if not gitPending: subprocess.run(["/home/gto/.local/bin/glow", "./doc/todo.md"])
+
