@@ -33,19 +33,26 @@ return {
       require("which-key").setup()
 
       -- Document existing key chains
-      require("which-key").register({
-        ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-        ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-        ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-        ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-        ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-        ["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-        ["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
+      require("which-key").add({
+        {"<leader>c", group = "[C]ode" },
+        {"<leader>c_", hidden = true },
+        {"<leader>d", group = "[D]ocument" },
+        {"<leader>d_", hidden = true },
+        {"<leader>r", group = "[R]ename" },
+        {"<leader>r_", hidden = true },
+        {"<leader>s", group = "[S]earch" },
+        {"<leader>s_", hidden = true },
+        {"<leader>w", group = "[W]orkspace" },
+        {"<leader>w_", hidden = true },
+        {"<leader>t", group = "[T]oggle" },
+        {"<leader>t_", hidden = true },
+        {"<leader>h", group = "Git [H]unk" },
+        {"<leader>h_", hidden = true },
       })
       -- visual mode
-      require("which-key").register({
-        ["<leader>h"] = { "Git [H]unk" },
-      }, { mode = "v" })
+      require("which-key").add({
+        {"<leader>h", desc = "Git [H]unk", mode = "v" },
+      })
     end,
   },
 
@@ -129,6 +136,7 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[S]earch [F]iles" })
+      vim.keymap.set("n", "<leader>o",  builtin.find_files, { desc = "Search Files" })
       vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
