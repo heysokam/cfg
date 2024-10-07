@@ -2,14 +2,25 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 keybinding:
   universal:
-    quit          : 'Q'
-    prevItem-alt  : 'i' # go one line up
-    nextItem-alt  : 'k' # go one line down
-    prevBlock-alt : 'j' # goto the previous block / panel
-    nextBlock-alt : 'l' # goto the next block / panel
+    quit                   : 'Q'
+    undo                   : 'l'
+    redo                   : '<c-l>'
+    prevBlock-alt          : 'n' # goto the previous block / panel
+    nextBlock-alt          : 'i' # goto the next block / panel
+    prevItem-alt           : 'u' # go one line up
+    nextItem-alt           : 'e' # go one line down
+    scrollUpMain-alt1      : 'U'
+    scrollDownMain-alt1    : 'E'
+    scrollUpMain-alt2      : '<c-u>'
+    scrollDownMain-alt2    : '<c-e>'
+    new                    : 'N'
   files:
-    ignoreFile    : 'I'
+    ignoreFile             : 'Y'
+  branches:
+    viewGitFlowOptions     : 'Y'
+  commits:
+    startInteractiveRebase : 'Y'
 os:
-  edit            : 'lvim {{filename}}'
+  edit                     : 'nvim {{filename}}'
 gui:
-  nerdFontsVersion: "3"
+  nerdFontsVersion         : "3"
