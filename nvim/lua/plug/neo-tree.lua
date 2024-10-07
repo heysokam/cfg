@@ -34,6 +34,12 @@ return {
         enabled         = true,  -- Find and focus the active buffer file every time the current file is changed while the tree is open.
         leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       },
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_gitignore = false,
+        hide_hidden = false,
+      },
     },
   },
 }
