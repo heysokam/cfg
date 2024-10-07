@@ -15,7 +15,7 @@ def FixLibs():
   sudo mount --bind /ssd/dev/gd/tools/slate/ /ssd/dev/gd/tools/minim/src/lib/slate
   sudo mount --bind /ssd/dev/gd/tools/confy/ /ssd/dev/gd/tools/minim/src/lib/confy
 
-  # oQ3/defrag buildsystem
+  # oQ3/defrag Buildsystem
   sudo mount --bind /ssd/dev/gd/tools/confy/ /ssd/dev/gd/other/id3/oQ3/defrag/src/lib/confy
   sudo mount --bind /ssd/dev/gd/tools/zstd/  /ssd/dev/gd/other/id3/oQ3/defrag/src/lib/confy/src/lib/zstd/
   # oQ3/engine buildsystem
@@ -23,8 +23,14 @@ def FixLibs():
   sudo mount --bind /ssd/dev/gd/tools/confy/ /ssd/dev/gd/other/id3/oQ3/defrag/src/build/engine/lib/confy
   # sudo mount --bind /ssd/dev/gd/tools/zstd/  /ssd/dev/gd/other/id3/oQ3/defrag/src/build/engine/lib/confy/src/lib/zstd/
 
+  # Jera Buildsystem
   sudo mount --bind /ssd/dev/gd/tools/confy/ /ssd/dev/gd/jera/src/lib/confy
   sudo mount --bind /ssd/dev/gd/tools/zstd/  /ssd/dev/gd/jera/src/lib/confy/src/lib/zstd
+
+  # mdk Buildsystem
+  sudo mount --bind /ssd/dev/gd/tools/confy/ /ssd/dev/gd/mdk/src/lib/confy
+  sudo mount --bind /ssd/dev/gd/tools/zstd/  /ssd/dev/gd/mdk/src/lib/confy/src/lib/zstd
+
 # Hack to submodules
 aliases['fixlibs'] = 'cl ; FixLibs();'
 
