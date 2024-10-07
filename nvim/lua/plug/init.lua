@@ -136,7 +136,8 @@ return {
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[S]earch [F]iles" })
-      vim.keymap.set("n", "<leader>o",  builtin.find_files, { desc = "Search Files" })
+      vim.keymap.set("n", "<leader>o",  builtin.oldfiles, { desc = 'Search Recent Files' })
+      vim.keymap.set("n", "<leader>O",  builtin.find_files, { desc = "Search Files" })
       vim.keymap.set("n", "<leader>fs", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>fw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
@@ -172,6 +173,7 @@ return {
 
   { -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
+    opts = { autoformat = false },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
@@ -259,7 +261,7 @@ return {
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+          map("<leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename")
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -381,9 +383,8 @@ return {
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for tsserver)
+            -- This handles overriding only values explicitly passed -- by the server configuration above.
+            -- Useful when disabling certain features of an LSP (for example, turning off formatting for tsserver)
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             require("lspconfig")[server_name].setup(server)
           end,

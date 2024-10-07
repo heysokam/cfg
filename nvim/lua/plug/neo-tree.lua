@@ -20,6 +20,8 @@ return {
         width = 30,
         mappings = {
           ['\\'] = 'close_window',
+          ['H']  = 'show_file_details',
+          ['i']  = false,
         },
       },
       buffers = {
