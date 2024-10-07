@@ -75,4 +75,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "~", nbsp = "␣", space = "·", eol = "~", extends = ">", precedes = "<" } --"tab:|."
 
+-- Stop Autoformat nonsense
 vim.g.zig_fmt_autosave = 0
+vim.b.autoformat = false
